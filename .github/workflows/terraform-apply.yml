@@ -22,6 +22,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Debug OIDC Token Claims
+        run: |
+          RAW_RESPONSE=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com")
+          JWT=$(echo "$RAW_RESPONSE" | jq -r '.value')
+          node -e '
+            const jwt = process.argv[1];
+            const [h, p] = jwt.split(".").slice(0, 2).map(s => JSON.parse(Buffer.from(s, "base64").toString()));
+            console.log("=== OIDC JWT Header ===");
+            console.log(JSON.stringify(h, null, 2));
+            console.log("=== OIDC JWT Payload (Claims) ===");
+            console.log(JSON.stringify(p, null, 2));
+          ' "$JWT"
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
