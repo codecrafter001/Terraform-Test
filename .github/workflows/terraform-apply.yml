@@ -7,7 +7,7 @@ on:
     paths:
       - "terraform/**"
       - "*.tf"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -48,5 +48,4 @@ jobs:
       - name: Terraform Apply
         id: apply
         working-directory: terraform
-        run: |
-          terraform apply -auto-approve -input=false -no-color
+        run: terraform apply -auto-approve -input=false -no-color
