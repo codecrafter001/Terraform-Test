@@ -34,7 +34,7 @@ jobs:
           role-to-assume: arn:aws:iam::314900493735:role/GitHubActions-TerraformDeployer
           aws-region: ap-south-1
           audience: sts.amazonaws.com
-          role-session-name: github-actions-tf-apply-${{ github.sha }}
+          role-session-name: github-actions-tf-apply-session
 
       - name: Verify AWS Identity
         run: |
