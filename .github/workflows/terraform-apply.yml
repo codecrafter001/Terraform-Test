@@ -1,10 +1,10 @@
-name: "Terraform Apply (Merge to Main)"
+name: Terraform Apply
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   id-token: write
@@ -12,35 +12,26 @@ permissions:
 
 jobs:
   apply:
-    name: "Terraform Apply"
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.9.5"
+          terraform_version: 1.9.5
 
-      - name: Configure AWS Credentials via OIDC (STS)
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::314900493735:role/GitHubActions-TerraformDeployer
           aws-region: ap-south-1
           audience: sts.amazonaws.com
-          role-session-name: github-actions-tf-apply
 
-      - name: Verify AWS Identity
-        run: aws sts get-caller-identity
+      - run: aws sts get-caller-identity
 
       - name: Terraform Init
-        id: init
         working-directory: terraform
         run: terraform init -input=false
 
       - name: Terraform Apply
-        id: apply
         working-directory: terraform
         run: terraform apply -auto-approve -input=false -no-color
