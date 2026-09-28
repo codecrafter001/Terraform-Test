@@ -37,8 +37,7 @@ jobs:
           role-session-name: github-actions-tf-apply-session
 
       - name: Verify AWS Identity
-        run: |
-          aws sts get-caller-identity
+        run: aws sts get-caller-identity
 
       - name: Terraform Init
         id: init
