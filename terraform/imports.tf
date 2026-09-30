@@ -4,36 +4,36 @@
 # TerraAgent never runs apply or import.
 
 import {
-  to = aws_iam_role.aws_elasticbeanstalk_ec2_role_c4548318
-  id = "aws-elasticbeanstalk-ec2-role"
+  to = aws_route_table.rtb_003b648347930edfc_24811887
+  id = "rtb-003b648347930edfc"
 }
 
 import {
-  to = aws_s3_bucket.elasticbeanstalk_ap_south_1_314900493735_e601428d
-  id = "elasticbeanstalk-ap-south-1-314900493735"
+  to = aws_subnet.subnet_02dadc23105f456c7_e02172d9
+  id = "subnet-02dadc23105f456c7"
 }
 
 import {
-  to = aws_route_table.rtb_0e1ce943b1ad77e78_e2f8527a
-  id = "rtb-0e1ce943b1ad77e78"
+  to = aws_subnet.subnet_05903c67b2d9cf30e_d79e046f
+  id = "subnet-05903c67b2d9cf30e"
 }
 
 import {
-  to = aws_security_group.aikart_email_agent_sg_a2c49eff
-  id = "sg-01d377db9843deb12"
+  to = aws_subnet.subnet_09159df420049bc3a_266ccf66
+  id = "subnet-09159df420049bc3a"
 }
 
 import {
-  to = aws_subnet.subnet_045e107acc9b9dfff_3e9a745b
-  id = "subnet-045e107acc9b9dfff"
+  to = aws_subnet.subnet_0b6636ac6bf13e7e5_914d31f6
+  id = "subnet-0b6636ac6bf13e7e5"
 }
 
 import {
-  to = aws_subnet.subnet_0a25b61c8743c54af_c84cc3d0
-  id = "subnet-0a25b61c8743c54af"
+  to = aws_subnet.subnet_0c3a8f6c4789c2fc0_2d098f5f
+  id = "subnet-0c3a8f6c4789c2fc0"
 }
 
 import {
-  to = aws_subnet.subnet_0eab8241c808097b4_46a4941e
-  id = "subnet-0eab8241c808097b4"
+  to = aws_subnet.subnet_0cc33aa9e58ca5daa_0fd504a3
+  id = "subnet-0cc33aa9e58ca5daa"
 }
