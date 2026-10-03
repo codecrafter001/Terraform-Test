@@ -4,36 +4,21 @@
 # TerraAgent never runs apply or import.
 
 import {
-  to = aws_route_table.rtb_022e5cf32607ba4b7_d650e310
-  id = "rtb-022e5cf32607ba4b7"
+  to = aws_route_table.rtb_0829fc54bd9bd1d4b_d5429212
+  id = "rtb-0829fc54bd9bd1d4b"
 }
 
 import {
-  to = aws_subnet.subnet_007975abb691f5086_a87b6c1f
-  id = "subnet-007975abb691f5086"
+  to = aws_subnet.subnet_060b820ee16766ef3_e2b0637e
+  id = "subnet-060b820ee16766ef3"
 }
 
 import {
-  to = aws_subnet.subnet_028f09f11e9f2356c_9df00f99
-  id = "subnet-028f09f11e9f2356c"
+  to = aws_subnet.subnet_064d34d3dc729b467_618414fb
+  id = "subnet-064d34d3dc729b467"
 }
 
 import {
-  to = aws_subnet.subnet_06fe4b2e3d8ab30e8_0aa66a6d
-  id = "subnet-06fe4b2e3d8ab30e8"
-}
-
-import {
-  to = aws_subnet.subnet_08c8642d18a050083_d60657db
-  id = "subnet-08c8642d18a050083"
-}
-
-import {
-  to = aws_subnet.subnet_0c331a35bac8b36dc_2bf45688
-  id = "subnet-0c331a35bac8b36dc"
-}
-
-import {
-  to = aws_subnet.subnet_0de9a1e1553e1806a_cbf1fdb2
-  id = "subnet-0de9a1e1553e1806a"
+  to = aws_subnet.subnet_0e3e44c16f23334f9_6d97c50f
+  id = "subnet-0e3e44c16f23334f9"
 }
